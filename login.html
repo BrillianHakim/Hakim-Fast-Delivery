@@ -2,31 +2,35 @@
 <html>
     <head>
         <title>Home</title>
+        <link rel="stylesheet" href="css/login.css">
     </head>
-    <body background="img/b4cb5a3c0c437cda70ec9b434da0519d.jpg">
-        <header align="center">
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Registrasi</a>
+    <body>
+        <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="login.html">Login</a>
+                <a href="register.html" class="register">Registrasi</a>
+            </nav>
         </header>
-        <main align="center">
-            <h4>Login</h4>
-            <form >
+        <main>
+            <form id="loginForm">
                 <input type="text" name="username" placeholder="Username" />
-                <!-- placeholder adalah atribut dalam elemen HTML yang digunakan untuk menampilkan teks  -->
+                <br>
                 <input type="password" name="password" placeholder="Password" />
+                <br>
                 <button type="submit">Login</button>
             </form>
             <nav>
-                <a href="register.html">Belum Memiliki Akun?</a>
+                <a href="register.html" class="register">Belum Memiliki Akun?</a>
             </nav>
-            <div>
-                <img src="img/3.png" alt=""> <br>
-                <img src="img/1 (1).png" alt=""><br>
-                <img src="img/2.jpg" alt="">
-            </div>
-            
         </main>
-     
+        <script>
+            // Menangani klik tombol login
+            document.getElementById("loginForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Mencegah pengiriman formulir
+                // Arahkan pengguna ke halaman dashboard
+                window.location.href = "dashboard.html";
+            });
+        </script>
     </body>
 </html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Order</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Order</a>
+        <a href="#">Cari</a>
+        <a href="#">Layanan</a>
+        <a href="#">FAQ</a>
+        <a href="#">Tentang Kami</a>
+    </nav>
+    <div class="carousel-slide" id="carouselSlide">
+        <div class="feature active">
+            <img src="img/Dashboard1.jpg" alt="Slide 1">
+        </div>
+        <div class="feature">
+            <img src="img/Dashboard2.png" alt="Slide 2">
+        </div>
+        <div class="feature">
+            <img src="img/Dashboard3.jpg" alt="Slide 3">
+        </div>
+        <div class="carousel-nav" id="carouselNav"></div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="card">
+                <h2>Selamat datang di Menu Order kami!</h2>
+                <p>Kami hadir untuk memudahkan Anda dalam melakukan pengiriman dengan cepat dan mudah.</p>
+            </div>
+            <div class="card">
+                <h2>Form Pengiriman</h2>
+                <form action="#" method="POST">
+                    <label for="nama">Nama:</label><br>
+                    <input type="text" id="nama" name="nama"><br>
+                    <label for="nomor_telepon">Nomor Telepon:</label><br>
+                    <input type="tel" id="nomor_telepon" name="nomor_telepon"><br>
+                    <label for="kota_asal">Kota Asal:</label><br>
+                    <input type="text" id="kota_asal" name="kota_asal"><br>
+                    <label for="kode_pos">Kode Pos:</label><br>
+                    <input type="text" id="kode_pos" name="kode_pos"><br>
+                    <label for="alamat">Alamat:</label><br>
+                    <textarea id="alamat" name="alamat"></textarea><br><br>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Informasi Penerima</h2>
+                <form action="#" method="POST">
+                    <label for="nama_penerima">Nama:</label><br>
+                    <input type="text" id="nama_penerima" name="nama_penerima"><br>
+                    <label for="nomor_telepon_penerima">Nomor Telepon:</label><br>
+                    <input type="tel" id="nomor_telepon_penerima" name="nomor_telepon_penerima"><br>
+                    <label for="kota_tujuan">Kota Tujuan:</label><br>
+                    <input type="text" id="kota_tujuan" name="kota_tujuan"><br>
+                    <label for="kode_pos_penerima">Kode Pos:</label><br>
+                    <input type="text" id="kode_pos_penerima" name="kode_pos_penerima"><br>
+                    <label for="alamat_penerima">Alamat:</label><br>
+                    <textarea id="alamat_penerima" name="alamat_penerima"></textarea><br><br>
+                </form>
+            </div>
+            <div class="card">
+                <h2>Informasi Barang</h2>
+                <form action="#" method="POST">
+                    <label for="jenis_barang">Jenis Barang:</label><br>
+                    <input type="text" id="jenis_barang" name="jenis_barang"><br>
+                    <label for="nama_barang">Nama Barang:</label><br>
+                    <input type="text" id="nama_barang" name="nama_barang"><br>
+                    <label for="jumlah">Jumlah:</label><br>
+                    <input type="text" id="jumlah" name="jumlah"><br>
+                    <label for="berat">Berat:</label><br>
+                    <input type="text" id="berat" name="berat"><br>
+                    <label for="nilai_barang">Nilai Barang:</label><br>
+                    <input type="text" id="nilai_barang" name="nilai_barang"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+
+        const features = document.querySelectorAll('.feature');
+        const dotsContainer = document.getElementById('carouselNav');
+
+        features.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('carousel-dot');
+            dot.onclick = () => currentSlide(index + 1);
+            dotsContainer.appendChild(dot);
+        });
+
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            if (n > features.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = features.length }
+            features.forEach((feature, index) => {
+                if (index === slideIndex - 1) {
+                    feature.classList.add('active');
+                } else {
+                    feature.classList.remove('active');
+                }
+            });
+            updateDots();
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.carousel-dot');
+            dots.forEach((dot, index) => {
+                if (index === slideIndex - 1) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
