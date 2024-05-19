@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">	
+<head>
+   <meta charset="UTF-8" />
+   <link rel="icon" href="../assets/icon.png" />
+   <link rel="stylesheet" href="../css/admin.css" />
+   <link
+	href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+			rel="stylesheet"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="icon" href="../assets/majestic.png" />
+   <title>HakiemDelivery.</title>
+</head>
+<body>
+   <div class="sidebar">
+	<ul class="nav-links">
+	   <li>
+		<a href="../admin.html">
+		   <i class="bx bx-grid-alt"></i>
+		   <span class="links_name">Dashboard</span>
+		</a>
+	   </li>
+	   <li>
+		<a href="../Pengiriman/Pengiriman.html">
+		   <i class="bx bx-box"></i>
+		   <span class="links_name">Pengiriman</span>
+		</a>
+	   </li>
+	   <li>
+		<a href="../tujuan/tujuan.html" class="active">
+		   <i class="bx bx-list-ul"></i>
+		   <span class="links_name">Penerimaan</span>
+		</a>
+	   </li>
+	</ul>
+   </div>
+   <section class="home-section">
+	<nav>
+	   <div class="sidebar-button">
+		<i class="bx bx-menu sidebarBtn"></i>
+	   </div>
+	   <div class="profile-details">
+		<a href="#">
+			<i class="bx bx-log-out"></i>
+			<a href="../login.html">Logout</a>
+		</a>
+	   </div>
+	</nav>
+	<div class="home-content">
+	   <h3>Input Pengiriman</h3>
+	   <div class="form-login">
+		<form action="">
+		   <label for="from">From</label>
+		   <input class="input" type="text" name="from"
+				id="from"/>
+		   <label for="destination">Destination</label>
+		   <input class="input" type="text" name="destination"
+				id="destination"/>
+		   <label for="price">Price</label>
+		   <input class="input" type="text" name="price"
+				id="price"/>
+		   <button type="submit" class="btn btn-simpan" 
+                        name="simpan">
+			      Simpan
+		   </button>
+		</form>
+	   </div>
+	</div>
+   </section>
+</body>
+</html>
